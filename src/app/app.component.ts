@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  title = 'The Will Will Web !';
+
   keyword = 'TEST';
 
   doSearch(keyword: string) {
