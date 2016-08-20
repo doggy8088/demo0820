@@ -9,7 +9,7 @@ export class AppComponent {
 
   keyword = 'TEST';
 
-  doSearch(inputDOM: HTMLInputElement) {
-    this.keyword = inputDOM.value;
+  doSearch(keyword: string) {
+    this.keyword = keyword;
   }
 }

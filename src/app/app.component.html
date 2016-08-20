@@ -78,11 +78,11 @@
               <div id="searchbox">
                 <input type="text"
                   #keywordInput
-                  (keyup.enter)="doSearch(keywordInput)"
+                  (keyup.enter)="doSearch(keywordInput.value)"
                   [value]="keyword"
                   placeholder="請輸入搜尋關鍵字" accesskey="s">
                 <input type="button" value="搜尋" id="searchbutton"
-                  (click)="doSearch(keywordInput)">
+                  (click)="doSearch(keywordInput.value)">
                 {{keyword}}
               </div>
           </div>
