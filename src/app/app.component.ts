@@ -9,8 +9,7 @@ export class AppComponent {
 
   keyword = 'TEST';
 
-  doSearch($event: KeyboardEvent) {
-    let input = $event.target as HTMLInputElement;
-    this.keyword = input.value;
+  doSearch(inputDOM: HTMLInputElement) {
+    this.keyword = inputDOM.value;
   }
 }
