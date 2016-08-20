@@ -10,9 +10,7 @@
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
         <app-article [item]="item" [i]="i"
-          (delete)="deleteArticle($event)"
-          [keyword]="keyword"
-          *ngFor="let item of data; let i = index"></app-article>
+          *ngFor="let item of datasvc.data; let i = index"></app-article>
 
       </div>
     </section>
@@ -28,12 +26,12 @@
               <div id="searchbox">
                 <input type="text"
                   #keywordInput
-                  (keyup.enter)="doSearch(keywordInput.value)"
-                  [value]="keyword"
+                  (keyup.enter)="datasvc.doSearch(keywordInput.value)"
+                  [value]="datasvc.keyword"
                   placeholder="請輸入搜尋關鍵字" accesskey="s">
                 <input type="button" value="搜尋" id="searchbutton"
-                  (click)="doSearch(keywordInput.value)">
-                {{keyword}}
+                  (click)="datasvc.doSearch(keywordInput.value)">
+                {{datasvc.keyword}}
               </div>
           </div>
         </div>

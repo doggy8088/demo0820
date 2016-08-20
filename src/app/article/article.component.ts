@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-article',
@@ -13,18 +14,13 @@ export class ArticleComponent implements OnInit, OnChanges {
   @Input()
   i: number;
 
-  @Input()
-  keyword: string;
 
-  @Output()
-  delete = new EventEmitter<any>();
-
-  constructor() { }
+  constructor(private datasvc: DataService) { }
 
   ngOnInit() {
   }
 
   ngOnChanges() {
-    console.log(this.keyword);
+    console.log(this.datasvc.keyword);
   }
 }
