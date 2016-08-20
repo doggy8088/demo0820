@@ -12,17 +12,23 @@ export class AppComponent {
 
   keyword = 'TEST';
 
-  data:any[];
+  default_data:any[];
+  data: any[];
 
 	constructor(private http: Http) {
     http.get('/api/articles.json')
         .subscribe(value => {
-          this.data = value.json();
+          this.data = this.default_data = value.json();
         });
 	}
 
   doSearch(keyword: string) {
     this.keyword = keyword;
+
+    this.data = this.default_data.filter(value => {
+      return value.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
+    });
+
   }
 
   deleteArticle(item: any) {
