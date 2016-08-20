@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  keyword = '';
+
+  keyword = 'TEST';
 
   doSearch($event: KeyboardEvent) {
     let input = $event.target as HTMLInputElement;
