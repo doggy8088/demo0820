@@ -30,7 +30,9 @@
 
       <hgroup class="pull-left">
         <h1><a [href]="titleurl">{{title}}</a></h1>
-        <h3 (click)="plusOne($event)">{{subtitle}} +{{num}}</h3>
+        <h3 (click)="plusOne($event)" 
+            [ngStyle]="{'font-size': num + 'px'}"
+            [ngClass]="{'red': (num%2)==1, 'blue': (num%2)==0}">{{subtitle}} +{{num}}</h3>
       </hgroup>
 
       <div id="social-icons" class="pull-right social-icon">
