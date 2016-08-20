@@ -13,7 +13,12 @@ export class AppComponent {
     this.keyword = keyword;
   }
 
-  data:any = [
+  deleteArticle(item: any) {
+    let i =this.data.indexOf(item);
+    this.data.splice(i, 1);
+  }
+
+  data:any[] = [
     {
       "href": "http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx",
       "title": "從命令提示字元中開啟 Visual Studio Code 如何避免顯示惱人的偵錯訊息",
