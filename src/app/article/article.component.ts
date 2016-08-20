@@ -1,17 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-article',
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnChanges {
 
   @Input()
   item: any;
 
   @Input()
   i: number;
+
+  @Input()
+  keyword: string;
 
   @Output()
   delete = new EventEmitter<any>();
@@ -21,8 +24,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteArticle(item) {
-    this.delete.emit(item);
+  ngOnChanges() {
+    console.log(this.keyword);
   }
-
 }
